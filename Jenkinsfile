@@ -1,4 +1,5 @@
 pipeline {
+    agent none
     stages{
         stage("Clone Code"){
             steps{
