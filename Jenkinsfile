@@ -11,7 +11,7 @@ pipeline {
         script {
           def imageTag = "v1.0.${env.BUILD_NUMBER}" // Generate image tag using Jenkins build number
           def dockerImage = docker.build("dockerrepository123/testnodeapp:${imageTag}", ".")
-          docker.withRegistry('https://index.docker.io/v1/', 'docker-cred') {
+          docker.withRegistry('https://index.docker.io/v1/', 'dockerHub') {
             dockerImage.push()
           }
           env.IMAGE_TAG = imageTag // Store the image tag in an environment variable for future 
