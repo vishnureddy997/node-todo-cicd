@@ -6,7 +6,7 @@ pipeline {
                 git url: "https://github.com/vishnureddy997/node-todo-cicd.git", branch: "master"
             }
         }
-    }
+    
        stage('Build and Push Docker Image') {
       steps {
         script {
@@ -25,4 +25,6 @@ pipeline {
             }
         }
     }
+    
+}
 
